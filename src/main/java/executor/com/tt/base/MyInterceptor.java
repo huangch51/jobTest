@@ -6,13 +6,14 @@ import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.plugin.*;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.util.Properties;
 @Component
 @Intercepts( {
-        @Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class,Integer.class})
-//        @Signature(method = "query", type = Executor.class,  args = {MappedStatement.class, Object.class,
-//                RowBounds.class, ResultHandler.class})
+       @Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class,Integer.class}),
+        //@Signature(type = Executor.class, method = "update",
+         //       args = {MappedStatement.class, Object.class }),
 })
 public class MyInterceptor implements Interceptor {
     @Override
@@ -27,10 +28,14 @@ public class MyInterceptor implements Interceptor {
         String sql=boundSql.getSql();
         System.out.println("interceptor:"+sql);
 
+         Method method = invocation.getMethod();
+         Object[] args = invocation.getArgs();
 //        MappedStatement mappedStatement= (MappedStatement) target;
+//        MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
 //        List<ResultMap> users= mappedStatement.getResultMaps();
-//        System.out.println(users);
+//        System.out.println("List"+users);
 
+        System.out.println(target+" "+method+" "+args);
         Object result = invocation.proceed();
         System.out.println("Invocation.proceed()");
         return result;
@@ -41,12 +46,13 @@ public class MyInterceptor implements Interceptor {
         // TODO Auto-generated method stub
         // 当目标类是StatementHandler类型时，才包装目标类，否者直接返回目标本身,减少目标被代理的
         // 次数
-        if (target instanceof StatementHandler) {
-            System.out.println("plugin...");
-            return Plugin.wrap(target,this);
-        } else {
-            return target;
-        }
+        return Plugin.wrap(target,this);
+//        if (target instanceof StatementHandler) {
+//            System.out.println("plugin...");
+//            return Plugin.wrap(target,this);
+//        } else {
+//            return target;
+//        }
     }
 
     @Override
