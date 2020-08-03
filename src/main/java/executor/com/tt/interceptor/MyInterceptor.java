@@ -37,6 +37,5 @@ public class MyInterceptor implements Interceptor {
         String po1= properties.getProperty("prop1");
         System.out.println("two-prop1::"+po1);
         System.out.println("add");
-
     }
 }
