@@ -35,6 +35,14 @@ public class MyInterceptor implements Interceptor {
 //        List<ResultMap> users= mappedStatement.getResultMaps();
 //        System.out.println("List"+users);
 
+
+//        MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
+//        Object parameter = invocation.getArgs()[1];
+//        BoundSql boundSql1 = mappedStatement.getBoundSql(parameter);
+//        String oldsql = boundSql1.getSql();
+//        System.out.println("old:"+oldsql);
+
+
         System.out.println(target+" "+method+" "+args);
         Object result = invocation.proceed();
         System.out.println("Invocation.proceed()");

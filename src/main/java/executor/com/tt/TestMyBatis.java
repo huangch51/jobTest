@@ -21,7 +21,7 @@ public class TestMyBatis {
 
         String statement1 = "executor.com.tt.mapper.UserMapper.selectList";//映射sql的标识字符串
         //执行查询返回一个唯一user对象的sql
-        User user = session.selectOne(statement,1);
+        User user = session.selectOne(statement,"huang");
         System.out.println(user);
         //执行查询返回一个唯一user对象的sql
         List<User> userList = session.selectList(statement1);
