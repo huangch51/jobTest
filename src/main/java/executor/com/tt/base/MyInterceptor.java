@@ -33,6 +33,8 @@ public class MyInterceptor implements Interceptor {
 
         Object result = invocation.proceed();
         System.out.println("Invocation.proceed()");
+        System.out.println("Invocation.proceed()");
+        System.out.println("Invocation.proceed()");
         return result;
     }
 
