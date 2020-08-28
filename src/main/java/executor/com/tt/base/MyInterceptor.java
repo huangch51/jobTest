@@ -35,6 +35,7 @@ public class MyInterceptor implements Interceptor {
         System.out.println("Invocation.proceed()");
         System.out.println("Invocation.proceed()");
         System.out.println("Invocation.proceed()");
+        System.out.println("git dev to master");
         return result;
     }
 
