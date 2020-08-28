@@ -2,11 +2,13 @@ package executor.com.tt.base;
 
 
 import org.apache.ibatis.executor.statement.StatementHandler;
-import org.apache.ibatis.mapping.BoundSql;
+import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.ResultMap;
 import org.apache.ibatis.plugin.*;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.Properties;
 @Component
 @Intercepts( {
@@ -22,14 +24,14 @@ public class MyInterceptor implements Interceptor {
         Object target=invocation.getTarget();
         //通过java反射获得mappedStatement属性值
         //可以获得mybatis里的resultype
-        StatementHandler statementHandler= (StatementHandler) target;
-        BoundSql boundSql=statementHandler.getBoundSql();
-        String sql=boundSql.getSql();
-        System.out.println("interceptor:"+sql);
+//        StatementHandler statementHandler= (StatementHandler) target;
+//        BoundSql boundSql=statementHandler.getBoundSql();
+//        String sql=boundSql.getSql();
+//        System.out.println("interceptor:"+sql);
 
-//        MappedStatement mappedStatement= (MappedStatement) target;
-//        List<ResultMap> users= mappedStatement.getResultMaps();
-//        System.out.println(users);
+        MappedStatement mappedStatement= (MappedStatement) target;
+        List<ResultMap> users= mappedStatement.getResultMaps();
+        System.out.println(users);
 
         Object result = invocation.proceed();
         System.out.println("Invocation.proceed()");
