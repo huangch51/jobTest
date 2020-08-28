@@ -10,5 +10,7 @@ public class Test {
         System.out.println("new");
         System.out.println("new");
         System.out.println("new");
+        System.out.println("new1");
+        System.out.println("new1");
     }
 }
