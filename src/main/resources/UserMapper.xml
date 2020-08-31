@@ -5,6 +5,6 @@
         select id,name from user where id = #{id};
     </select>
     <select id="selectList" resultType="java.util.Map">
-        select id,name from user;
+        select id,name from student where id=1;
     </select>
 </mapper>

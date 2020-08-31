@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <plugins>
-        <plugin interceptor="executor.com.tt.base.MyInterceptor">
+        <plugin interceptor="executor.com.tt.one.ClickhouseInterceptor">
             <property name="prop1" value="prop1"/>
             <property name="prop2" value="prop2"/>
         </plugin>
@@ -14,9 +14,9 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://192.168.142.134:3306/test"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
                 <property name="username" value="root"/>
-                <property name="password" value="root1234"/>
+                <property name="password" value="root"/>
             </dataSource>
         </environment>
     </environments>
