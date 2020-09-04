@@ -33,12 +33,10 @@ public class ClickhouseInterceptor implements Interceptor {
 //        System.out.println(users);
 
 
-        BoundBerry boundBerry= (BoundBerry) invocation.getArgs()[1];
-        boundBerry.setLimit(100);
-        boundBerry.setOffset(0);
+//        BoundBerry boundBerry= (BoundBerry) invocation.getArgs()[1];
+//        boundBerry.setLimit(100);
+//        boundBerry.setOffset(0);
 
-
-        System.out.println(boundBerry.getLimit());
         return invocation.proceed();
     }
 
