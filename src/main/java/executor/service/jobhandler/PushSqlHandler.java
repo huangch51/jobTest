@@ -31,3 +31,22 @@ public class PushSqlHandler extends IJobHandler {
         return SUCCESS;
     }
 }
+
+
+//    private void pushSqlToBloodLineSystem(String sql){
+//        // TODO: 2020-7-29 写到一个本地文件
+//        try{
+//            File file =new File(PUSH_SQL_FILE_NAME);
+//            if(!file.exists()){
+//                file.createNewFile();
+//            }
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+//            String dataTime=df.format(new Date());
+//            FileWriter fileWriter = new FileWriter(file,true);
+//            fileWriter.write(dataTime+sql+"\r\n");
+//            fileWriter.close();
+//        }catch(IOException e){
+//            e.printStackTrace();
+//        }
+//        logger.info("sql : "+sql);
+//    }

@@ -36,4 +36,14 @@
             #{params[${key}]}
         </foreach>
     </insert>
+
+
+
+    <select id="queryTableColumn" resultType="java.util.Map">
+         select column_name,COLUMN_TYPE from information_schema.COLUMNS where table_name = #{table_name}
+    </select>
+
+    <select id="queryTableColumn1" resultType="java.util.Map">
+         select column_name,COLUMN_TYPE from information_schema.COLUMNS where table_name = #{table_name}
+    </select>
 </mapper>

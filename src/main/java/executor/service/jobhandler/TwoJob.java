@@ -45,3 +45,14 @@ public class TwoJob extends IJobHandler {
         System.out.println("could action?");
     }
 }
+
+
+//spring.kafka.listener.concurrency=1
+//        spring.kafka.listener.ack-mode= manual_immediate
+//
+//        spring.kafka.consumer.bootstrap-servers=192.168.9.225:9092
+//        spring.kafka.consumer.group-id=daqi-lineage-group
+//        spring.kafka.consumer.auto-offset-reset=earliest
+//        spring.kafka.consumer.enable-auto-commit=false
+//        spring.kafka.consumer.auto-commit-interval=100
+//        spring.kafka.topic=daqi_lineage_sql

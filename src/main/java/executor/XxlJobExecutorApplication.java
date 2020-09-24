@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author xuxueli 2018-10-28 00:38:13
  */
-//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}
+//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @SpringBootApplication
 public class XxlJobExecutorApplication {
 

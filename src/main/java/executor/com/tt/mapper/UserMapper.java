@@ -18,4 +18,8 @@ public interface UserMapper {
 
    void insertByMap(Map params);
 
+
+   List<Map> queryTableColumn(Map params);
+   List<Map> queryTableColumn1(Map params);
+
 }
