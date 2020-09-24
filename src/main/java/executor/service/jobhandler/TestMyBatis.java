@@ -3,6 +3,7 @@ package executor.service.jobhandler;
 import executor.com.tt.base.MyBatisUtil;
 import executor.com.tt.dao.User;
 import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,5 +27,11 @@ public class TestMyBatis {
         //执行查询返回一个唯一user对象的sql
         List<User> userList = session.selectList(statement1);
        System.out.println(userList);
+    }
+
+
+    @Test
+    public void testk(){
+        System.out.println("new add");
     }
 }

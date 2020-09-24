@@ -40,6 +40,7 @@ public class MyInterceptor implements Interceptor {
         System.out.println("git dev to master");
         System.out.println("git dev3 to master");
         System.out.println("git dev2 to master");
+        System.out.println("git dev to master2");
         return result;
     }
 
