@@ -13,6 +13,7 @@ import org.apache.ibatis.mapping.SqlSource;
 import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
+import org.joda.time.LocalDate;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -115,14 +116,17 @@ public class DataAuthorInterceptor implements Interceptor {
 
 
     public static void main(String[] args) {
-        String sql = "select a, b, c from table1";
-        String sql2 = "select a, b, c from (select e as a, f as b, g as c from table1)";
-        String sql3 = "select a as a1, b b1, c from table3 as t3, (select e as a, f as b from table1) , (select g as c from table2)";
-        String sql4 = "select c.vin8, (select auto_brand from vin_base b where b.vin8 = c.vin8)\n" +
-                "from vin_base c  where c.vin8 = '72753413' ";
-        String sql5 = "select a, b from table1 union select c, d from table2;";
-        String changeSql = new DataAuthorInterceptor().parseSql(sql4);
-        System.out.println("changeSql>>>>>>>>" + changeSql);
+//        String sql = "select a, b, c from table1";
+//        String sql2 = "select a, b, c from (select e as a, f as b, g as c from table1)";
+//        String sql3 = "select a as a1, b b1, c from table3 as t3, (select e as a, f as b from table1) , (select g as c from table2)";
+//        String sql4 = "select c.vin8, (select auto_brand from vin_base b where b.vin8 = c.vin8)\n" +
+//                "from vin_base c  where c.vin8 = '72753413' ";
+//        String sql5 = "select a, b from table1 union select c, d from table2;";
+//        String changeSql = new DataAuthorInterceptor().parseSql(sql4);
+//        System.out.println("changeSql>>>>>>>>" + changeSql);
+        String date="2020-09-01";
+       String day=  new LocalDate(date).withDayOfMonth(1).toString("yyyy-MM");
+        System.out.println(day);
 
 
     }

@@ -33,7 +33,7 @@ public class TestExcel {
     @Test
     public void testImport() throws Exception{
         Map param=new HashMap();
-        String fileName="dim_gift_info_map-445517377.xlsx";
+        String fileName="dim_gift_info_map-442498111.xls";
         String tableName="dim_room_type_map";
         param.put("file_name",fileName);
         param.put("table_name",tableName);
